@@ -11,7 +11,14 @@ block content
     | http://foo.com:80
   
   h3 Example output creation:
-  code { "original_url":"http://foo.com:80", "short_url":"[app]/8170" }
+  code { "original_url":"http://foo.com:80", "short_url":"
+    span.app-url
+    | 8170" }
+    
+  h3 Usage:
+  code
+    span.app-url
+    | 8170
   
   h3 Will redirect to
   code https://www.google.com/
