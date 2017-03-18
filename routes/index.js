@@ -47,7 +47,12 @@ router.get('/:protocol//:url', function (req, res) {
                     if (err)
                         res.send("there was a problem saving the url in the database");
                     else
-                        res.render('all', {'urls': [createData]});
+                        var output = {
+                            "original_url": createData.url,
+                            "short_url": req.protocol + '://' + req.get('host') + '/' + createData.urlNum,
+                        };
+                        res.send(output);
+                        //res.render('all', {'urls': [createData]});
                 });
             }
         );
