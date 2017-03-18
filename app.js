@@ -7,7 +7,8 @@ var bodyParser = require('body-parser');
 
 var mongo = require('mongodb');
 var monk = require('monk');
-var db = monk('localhost:27017/url-shortener');
+//var db = monk('localhost:27017/url-shortener');
+var db = monk(process.env.MONGOLAB_URI);
 
 var index = require('./routes/index');
 var users = require('./routes/users');
