@@ -1,0 +1,6 @@
+extends layout
+
+block content
+  h3 all
+  each url in urls
+    code { "original_url":"#{url.url}", "short_url":"#{url.urlNum}" }
